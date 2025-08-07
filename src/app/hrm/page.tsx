@@ -1,9 +1,8 @@
-import Shell from "@/components/layout/shell";
-
-export default function HRMPage() {
+export default function HRMDashboard() {
   return (
-    <Shell>
-      <h1 className="text-xl font-semibold">HRM Module</h1>
-    </Shell>
+    <div>
+      <h1 className="text-3xl font-bold mb-4">HRM Dashboard</h1>
+      <p>Welcome to the Human Resources Management system.</p>
+    </div>
   );
 }

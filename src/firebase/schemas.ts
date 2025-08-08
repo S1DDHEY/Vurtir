@@ -1,9 +1,15 @@
-export type Employee = {
-  id?: string;    // Firestore doc ID
-  name: string;
-  email: string;
-  position: string;
-  department: string;
-  photoURL?: string;
-  createdAt?: any;    // Firestore Timestamp
+import { FirestoreDataConverter } from "firebase/firestore";
+import { Employee } from "@/types/Employee";
+
+export const employeeConverter: FirestoreDataConverter<Employee> = {
+  toFirestore: (employee) => ({
+    ...employee,
+  }),
+  fromFirestore: (snapshot, options) => {
+    const data = snapshot.data(options);
+    return {
+      id: snapshot.id,
+      ...data,
+    } as Employee;
+  },
 };

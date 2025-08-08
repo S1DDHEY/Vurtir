@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { collection, onSnapshot, query, orderBy } from "firebase/firestore";
 import { db } from "@/firebase/client";
-import { Employee } from "@/firebase/schemas";
+import { Employee } from "@/types/Employee";
 
 export function useEmployees() {
   const [employees, setEmployees] = useState<Employee[]>([]);
